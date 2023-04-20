@@ -1,10 +1,10 @@
 function getComputerChoice(){
-    // get a random int between 1-3
+    // get random int from 1 - 3
     let randomInt = Math.floor(Math.random() * 3 + 1);
-    // if 1 rock, else if 2 paper, else scissors
-    if (randomInt = 1) {
+    // assign a choice based on random int
+    if (randomInt === 1) {
         computerChoice = "rock";
-    } else if (randomInt = 2) {
+    } else if (randomInt === 2) {
         computerChoice = "paper";
     } else {
         computerChoice = "scissors"
@@ -12,4 +12,22 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-console.log(getComputerChoice())
+function playRound(computerSelection, playerSelection){
+    // decide winner of round 
+    if (computerSelection === "rock" && (playerSelection === "paper")){
+        return "You win!"
+    } else if (computerSelection === "paper" && (playerSelection === "scissors")){
+        return "You win!"
+    } else if (computerSelection === "scissors" && (playerSelection === "rock")){
+        return "You win!"
+    } else if (computerSelection === "paper" && (playerSelection === "rock")){
+        return "You lose!"
+    } else if (computerSelection === "scissors" && (playerSelection === "paper")){
+        return "You lose!"
+    } else if (computerSelection === "rock" && (playerSelection === "scissors")){
+        return "You lose!"
+    } else {
+        return "It was a draw!"
+    }
+
+}
